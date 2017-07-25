@@ -7,11 +7,11 @@ class Post {
 	Date dateCreated
 	Date lastUpdated
 
+	static hasMany = [tags: Tag]
+
 	static mapping = {
 		content type: "text"
 	}
-
-	static hasMany = [tags: Tag]
 
     static constraints = {
     	title maxSize: 255, blank: false
