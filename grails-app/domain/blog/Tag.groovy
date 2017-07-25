@@ -7,6 +7,6 @@ class Tag {
     Date lastUpdated
 
     static constraints = {
-        name maxSize: 30, blank: false
+        name maxSize: 30, blank: false, unique: true
     }
 }
