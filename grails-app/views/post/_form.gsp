@@ -18,6 +18,6 @@
 <div class="fieldcontain">
 	<!--g:select name="tags" from="${Tag.list()}" value="${post.tags*.id}" optionKey="id" multiple="true" /-->
 	<g:each in="${Tag.list()}" var="tag"><!--I know it's a big no-no to query DB on view layer, but bear with me for now-->
- 		<label>${tag.name}</label><g:checkBox name="tags" value="${tag.id}" checked="${tag in post.tags}" />
+ 		<label>${tag.name}</label><g:checkBox name="tags" value="${tag.id}" checked="${post.tags.find { it.id == tag.id }}" />
  	</g:each>
 </div>
