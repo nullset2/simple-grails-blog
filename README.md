@@ -28,6 +28,24 @@ I recommend using [jabba](https://github.com/shyiko/jabba) to install JDKs and [
 * Post has many Tags (Join Table `Post_Tags`)
 * Tags are fixed (see `bootstrap.groovy` to customize the list)
 
-* E-R Diagram: http://i.imgur.com/biDhC65.png
+E-R Diagram:
+![](http://i.imgur.com/biDhC65.png)
+
+## What to expect
+
+If running correctly, you should see an application like this:
+
+![](http://i.imgur.com/5z3F1Jh.png)
+
+## TODO
+
+* Ajax post deletion from index view
+* Add attachments
+* Add comments
+* Add editor credentials and a user model with role
+* Add a way to add and police user privileges by role so only admins can edit the Tags
+* Make editor HTML5-rich
+* Lots more unit tests (only domains are tested now)
+* Integration tests
 
 @nullset2 (2017)
