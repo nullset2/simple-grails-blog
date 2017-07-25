@@ -30,6 +30,7 @@
                         <p class="pull-right"><i class="fa fa-tags"></i>No tags!</p>
                     </g:else>
                     <g:link action="show" id="${post.id}">Permalink</g:link>
+                    <g:link action="edit" id="${post.id}">Edit</g:link>
                 </div>
                 </g:each>
             </g:if>
