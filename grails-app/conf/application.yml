@@ -114,7 +114,7 @@ environments:
             url: jdbc:postgresql://localhost:5432/blog-test
     production:
         dataSource:
-            dbCreate: none
+            dbCreate: update
             url: jdbc:postgresql://localhost:5432/blog
             properties:
                 jmxEnabled: true
