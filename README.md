@@ -19,6 +19,7 @@ I recommend using [jabba](https://github.com/shyiko/jabba) to install JDKs and [
 * do `./gradlew` to fetch dependencies
 * do `grails run-app` or `grails package` to get a tasty little war to deploy onto your application server
 * hit `http://localhost:8080` on development or your prod server
+* all resources may be also fetched as json or xml, for example: `curl http://localhost:8080/post.json`
 * do `grails test-app` to run the test suite
 
 ## Documentation
@@ -27,7 +28,6 @@ I recommend using [jabba](https://github.com/shyiko/jabba) to install JDKs and [
 * Post has many Tags (Join Table `Post_Tags`)
 * Tags are fixed (see `bootstrap.groovy` to customize the list)
 
-* E-R Diagram: 
-* Postman Collection: 
+* E-R Diagram: http://i.imgur.com/biDhC65.png
 
 @nullset2 (2017)
