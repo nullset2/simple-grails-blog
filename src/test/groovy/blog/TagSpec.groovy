@@ -8,15 +8,24 @@ import spock.lang.Specification
  */
 @TestFor(Tag)
 class TagSpec extends Specification {
-
-    def setup() {
+	def "Tags can be created with proper data"() {
+		when:
+			def tag = new Tag(name: "Testing")
+        then:
+        	tag.validate()
     }
 
-    def cleanup() {
+    def "Tags can't be created with names over 30 characters in length"() {
+        when:
+            def tag = new Tag(name: "111111111111111111111111111111111111")
+        then:
+        	tag.validate() == false
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    def "Tags can't be created with blank name"() {
+        when:
+            def tag = new Tag(name: "")
+        then:
+        	tag.validate() == false
     }
 }
