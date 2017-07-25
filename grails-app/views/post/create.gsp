@@ -27,7 +27,8 @@
             </g:hasErrors>
             <g:form resource="${this.post}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="post"/>
+                    <g:render template="form"/>
+                    <!--f:all bean="post"/-->
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

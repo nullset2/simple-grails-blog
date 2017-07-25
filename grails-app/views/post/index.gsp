@@ -21,7 +21,7 @@
                 <g:each in="${postList}" var="post">
                 <div class="well" style="margin: 20px;">
                     <h2>${post.title}</h2>
-                    <p>${post.content}</p>
+                    <pre><p>${post.content}</p></pre>
                     <g:if test="${post.tags}">
                         <g:each in="${post.tags.findAll()}">
                             <p class="pull-right" style="margin-right:5px;"><i class="fa fa-tags"></i><g:link controller="Tag" action="show" id="${it?.id}">${it.name}</g:link></p>

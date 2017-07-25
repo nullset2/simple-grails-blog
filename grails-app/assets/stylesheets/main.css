@@ -572,3 +572,8 @@ img.grails-logo {
     height:340px;
     margin-top:-10px;
 }
+
+.big-textarea {
+    height: 400px;
+    width: 800px;
+}

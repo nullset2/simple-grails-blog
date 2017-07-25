@@ -29,7 +29,8 @@
             <g:form resource="${this.post}" method="PUT">
                 <g:hiddenField name="version" value="${this.post?.version}" />
                 <fieldset class="form">
-                    <f:all bean="post"/>
+                    <g:render template="form"/>
+                    <!--f:all bean="post"/-->
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
