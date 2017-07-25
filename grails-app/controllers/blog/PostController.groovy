@@ -10,7 +10,7 @@ class PostController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Post.list(params), model:[postCount: Post.count()]
+        respond Post.list(params).sort{ it.dateCreated }, model:[postCount: Post.count()]
     }
 
     def show(Post post) {

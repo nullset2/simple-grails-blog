@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'post.label', default: 'Post')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>Alfredo's rants</title>
     </head>
         <a href="#list-post" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
@@ -22,6 +22,7 @@
                 <div class="well" style="margin: 20px;">
                     <h2>${post.title}</h2>
                     <pre><p>${post.content}</p></pre>
+                    <i class="fa fa-calendar" style="margin-right: 5px;"></i><span>${post.dateCreated.format('yyyy-MM-dd HH:mm')}</span>
                     <g:if test="${post.tags}">
                         <g:each in="${post.tags.findAll()}">
                             <p class="pull-right" style="margin-right:5px;"><i class="fa fa-tags"></i><g:link controller="Tag" action="show" id="${it?.id}">${it.name}</g:link></p>
