@@ -110,7 +110,7 @@ environments:
             url: jdbc:postgresql://localhost:5432/blog-development
     test:
         dataSource:
-            dbCreate: create-drop
+            dbCreate: create
             url: jdbc:postgresql://localhost:5432/blog-test
     production:
         dataSource:
