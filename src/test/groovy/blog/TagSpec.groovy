@@ -19,13 +19,13 @@ class TagSpec extends Specification {
         when:
             def tag = new Tag(name: "111111111111111111111111111111111111")
         then:
-        	tag.validate() == false
+        	!tag.validate()
     }
 
     def "Tags can't be created with blank name"() {
         when:
             def tag = new Tag(name: "")
         then:
-        	tag.validate() == false
+        	!tag.validate()
     }
 }

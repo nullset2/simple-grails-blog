@@ -21,13 +21,13 @@ class PostSpec extends Specification {
             def post = new Post(title: "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
             		 			content: "This shouldn't save!")
         then:
-        	post.validate() == false
+        	!post.validate()
     }
 
     def "Posts can't be created with blank title"() {
         when:
             def post = new Post(title: "", content: "this is a post without title! this shouldn't save!")
         then:
-        	post.validate() == false
+        	!post.validate()
     }
 }

@@ -8,11 +8,9 @@ import spock.lang.*
 class PostControllerSpec extends Specification {
 
     def populateValidParams(params) {
-        assert params != null
-
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
-        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        params["title"] = "Hello World!"
+        params["content"] = "Yes, this is some nice and nonempty content for a nice sanitized post for our unit tests... Nice right?"
+        assert params != null       
     }
 
     void "Test the index action returns the correct model"() {
@@ -30,7 +28,7 @@ class PostControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.post!= null
+            model.post != null
     }
 
     void "Test the save action correctly persists an instance"() {
@@ -98,7 +96,7 @@ class PostControllerSpec extends Specification {
             controller.update(null)
 
         then:"A 404 error is returned"
-            response.redirectedUrl == '/post/index'
+            response.redirectedUrl == '/'
             flash.message != null
 
         when:"An invalid domain instance is passed to the update action"
@@ -130,7 +128,7 @@ class PostControllerSpec extends Specification {
             controller.delete(null)
 
         then:"A 404 is returned"
-            response.redirectedUrl == '/post/index'
+            response.redirectedUrl == '/'
             flash.message != null
 
         when:"A domain instance is created"
@@ -146,7 +144,7 @@ class PostControllerSpec extends Specification {
 
         then:"The instance is deleted"
             Post.count() == 0
-            response.redirectedUrl == '/post/index'
+            response.redirectedUrl == '/'
             flash.message != null
     }
 }
