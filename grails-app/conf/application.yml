@@ -100,8 +100,8 @@ dataSource:
     pooled: true
     jmxExport: true
     driverClassName: org.postgresql.Driver
-    username: grails
-    password: testgrails #not meant for use in production!
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD} #not meant for use in production!
 
 environments:
     development:
@@ -115,7 +115,7 @@ environments:
     production:
         dataSource:
             dbCreate: update
-            url: jdbc:postgresql://localhost:5432/blog
+            url: ${DATABASE_URL}
             properties:
                 jmxEnabled: true
                 initialSize: 5
